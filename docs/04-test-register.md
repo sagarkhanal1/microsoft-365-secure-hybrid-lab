@@ -19,9 +19,19 @@
 | `AC-001` | Standard user admin restriction | Standard HR user cannot administer Microsoft 365 | Admin Center returned a permission-denied message | PASS |
 | `RBAC-001` | Delegated helpdesk role | Technician has Helpdesk Administrator and no additional admin role | Exactly one role verified | PASS |
 | `HD-001` | Helpdesk password reset | Helpdesk Administrator can reset a standard employee password | Password reset completed | PASS — EVIDENCE PENDING |
-| `HD-002` | Privileged-account restriction | Helpdesk Administrator cannot reset a Global Administrator password | Not tested | PENDING |
-| `CA-001` | Conditional Access pilot | Report-only policy records expected decisions without blocking users | Not implemented | PENDING |
-| `INT-001` | Device compliance | Intune-managed test device evaluates against defined compliance policy | Not implemented | PENDING |
+| `HD-002` | Privileged-account restriction | Helpdesk Administrator cannot reset a Global Administrator password | Password reset was denied | PASS |
+| `MOV-001` | Mover workflow | Department access changes without an unintended access gap | HR-only, overlapping transition, and IT-only states verified | PASS |
+| `CA-001` | MFA report-only pilot | Report-only policy records expected decisions without blocking users | Standard-user evaluation succeeded; emergency account exclusion was not applied | PASS |
+| `CA-002` | Compliant-device report-only positive path | Compliant managed browser session satisfies the control | Report-only evaluation succeeded | PASS |
+| `CA-003` | Compliant-device report-only negative path | Unmanaged/private session fails the control | Report-only evaluation failed as expected | PASS |
+| `CA-004` | Compliant-device enforced negative path | Unmanaged/private session is blocked | Access was blocked | PASS |
+| `CA-005` | Compliant-device enforced positive path | Managed compliant session is allowed | Access succeeded and policy result was Success | PASS |
+| `INT-001` | Device enrollment | Windows 11 pilot appears as an Intune-managed corporate device | Device `PC1` enrolled successfully | PASS |
+| `INT-002` | Device compliance | Pilot evaluates against the compliance policy | All configured settings reported compliant | PASS |
+| `INT-003` | Security baseline | Pilot receives the Windows security baseline | Initial VBS error remediated; final deployment succeeded | PASS |
+| `AUT-001` | Graph delegated connection | Requested Graph scopes are available after interactive authentication | Read-only and scoped write sessions connected successfully | PASS |
+| `AUT-002` | CSV joiner validation | CSV row, target group, and username are validated before creation | Noah Wilson row, group, and available username validated | PASS |
+| `AUT-003` | CSV joiner execution | New user is created and added to the requested group | User created and membership verified | PASS — LICENSING PENDING |
 | `HYB-001` | Hybrid identity | Selected on-premises identity synchronises with correct source-of-authority behaviour | Not implemented | PENDING |
 
 ## HD-001 evidence note

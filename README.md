@@ -2,7 +2,7 @@
 
 A hands-on Microsoft 365 administration project that designs, implements, tests, and documents a secure cloud workplace for a simulated 25-user organisation.
 
-> **Status:** In progress — identity foundation and delegated administration testing completed.
+> **Status:** In progress — identity, Conditional Access, and Intune pilot phases completed; Microsoft Graph automation paused after the first successful joiner execution.
 
 ## Project objective
 
@@ -18,8 +18,14 @@ The lab currently covers:
 - Least-privilege administrative role delegation
 - Password-reset support workflow
 - Access-control testing and audit-evidence planning
+- Identity mover and leaver workflows
+- Emergency-access accounts and Conditional Access exclusions
+- Report-only and enforced MFA/compliant-device policies
+- Windows 11 enrollment, compliance, BitLocker, and security baselines
+- Microsoft Graph PowerShell with delegated least-privilege scopes
+- CSV-driven user creation and security-group assignment
 
-Planned phases include Conditional Access, Intune, Microsoft Graph PowerShell automation, sign-in investigation, and hybrid identity integration with Windows Server Active Directory.
+Remaining phases include completing Microsoft Graph automation, hybrid identity integration with Windows Server Active Directory, and final recruiter-focused documentation.
 
 ## Business scenario
 
@@ -37,7 +43,9 @@ flowchart TD
     U --> M["Microsoft 365 services"]
     G --> X["Resource access"]
     R --> H["Delegated support"]
-    I["Intune and endpoints"] -. planned .-> A
+    I["Intune and endpoints"] --> A
+    P["Conditional Access"] --> A
+    GPH["Graph PowerShell"] --> A
     D["On-premises AD DS"] -. planned hybrid identity .-> A
 ```
 
@@ -54,6 +62,12 @@ flowchart TD
 | Standard-user restriction | HR user attempted to open Microsoft 365 Admin Center | Access denied — `AC-001 PASS` |
 | Delegated support | Helpdesk Administrator role assigned to an IT support identity | Exactly one admin role verified |
 | Password reset | Helpdesk identity reset a standard user's password | Operation completed — `HD-001 PASS`; audit evidence pending |
+| Privileged reset protection | Helpdesk attempted to reset a Global Administrator | Operation denied — `HD-002 PASS` |
+| Mover workflow | Employee transferred from HR to IT using controlled overlapping membership | Before, transition, and after states validated |
+| Conditional Access | MFA and compliant-device controls tested before enforcement | Report-only decisions and enforced allow/block paths validated |
+| Intune compliance | Windows 11 VirtualBox pilot enrolled and evaluated | BitLocker, Secure Boot, firewall, antimalware, and OS controls compliant |
+| Endpoint baseline | Windows security baseline assigned to pilot group | Initial VBS error remediated; final deployment succeeded |
+| Graph automation | Delegated Graph session used for a CSV joiner | User created and added to the requested security group; licensing paused |
 
 ## Documentation
 
@@ -62,6 +76,8 @@ flowchart TD
 - [Identity and RBAC implementation](docs/03-identity-and-rbac.md)
 - [Test register](docs/04-test-register.md)
 - [Roadmap](docs/05-roadmap.md)
+- [Conditional Access and Intune implementation](docs/06-conditional-access-and-intune.md)
+- [Microsoft Graph automation progress](docs/07-graph-automation.md)
 - [Evidence-handling rules](evidence/README.md)
 
 ## Security and privacy
@@ -70,4 +86,4 @@ No passwords, temporary credentials, MFA QR codes, tenant IDs, object IDs, billi
 
 ## Skills demonstrated
 
-Microsoft Entra ID · Microsoft 365 Admin Center · Identity lifecycle · RBAC · Least privilege · MFA · Security groups · Licensing · Access-control testing · Troubleshooting · Technical documentation
+Microsoft Entra ID · Microsoft 365 Admin Center · Identity lifecycle · RBAC · Least privilege · MFA · Conditional Access · Microsoft Intune · Windows 11 · BitLocker · Security baselines · Microsoft Graph PowerShell · CSV automation · Troubleshooting · Technical documentation

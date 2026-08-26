@@ -17,33 +17,33 @@
 - [x] Validate standard-user administrative denial
 - [x] Delegate Helpdesk Administrator role
 - [x] Execute standard-user password-reset ticket
-- [ ] Validate privileged-account reset restrictions
-- [ ] Design and test mover workflow
-- [ ] Design and test leaver workflow
+- [x] Validate privileged-account reset restrictions
+- [x] Design and test mover workflow
+- [x] Design and test leaver workflow
 
 ## Phase 3 — Conditional Access
 
-- [ ] Create emergency-access design and rollback procedure
-- [ ] Map Security Defaults controls to planned policies
-- [ ] Build policies in report-only mode
-- [ ] Require MFA for appropriate users and applications
-- [ ] Evaluate compliant-device access
-- [ ] Review sign-in logs before enforcement
+- [x] Create emergency-access design and rollback procedure
+- [x] Map Security Defaults controls to planned policies
+- [x] Build policies in report-only mode
+- [x] Require MFA for appropriate users and applications
+- [x] Evaluate compliant-device access
+- [x] Review sign-in logs before enforcement
 
 ## Phase 4 — Intune endpoint management
 
-- [ ] Define enrolment scope
-- [ ] Enrol a Windows test device
-- [ ] Create configuration profiles
-- [ ] Create compliance policy
-- [ ] Deploy security baseline
-- [ ] Test compliant and noncompliant access paths
-- [ ] Document remediation workflow
+- [x] Define enrolment scope
+- [x] Enrol a Windows test device
+- [x] Create configuration profiles
+- [x] Create compliance policy
+- [x] Deploy security baseline
+- [x] Test compliant and noncompliant access paths
+- [x] Document remediation workflow
 
 ## Phase 5 — Automation
 
-- [ ] Connect with Microsoft Graph PowerShell using least privilege
-- [ ] Build CSV-driven joiner workflow
+- [x] Connect with Microsoft Graph PowerShell using least privilege
+- [ ] Build CSV-driven joiner workflow *(user creation and group assignment working; licensing and reusable script pending)*
 - [ ] Add validation, error handling, and audit output
 - [ ] Build mover and leaver functions
 - [ ] Test idempotency and rollback behaviour

@@ -2,7 +2,7 @@
 
 A hands-on Microsoft 365 administration project that designs, implements, tests, and documents a secure cloud workplace for a simulated 25-user organisation.
 
-> **Status:** In progress — identity, Conditional Access, and Intune pilot phases completed; Microsoft Graph automation paused after the first successful joiner execution.
+> **Status:** In progress — identity, Conditional Access, and Intune pilot phases completed; Microsoft Graph PowerShell validation and safe joiner preview documented, with write automation intentionally paused.
 
 ## Project objective
 
@@ -23,7 +23,7 @@ The lab currently covers:
 - Report-only and enforced MFA/compliant-device policies
 - Windows 11 enrollment, compliance, BitLocker, and security baselines
 - Microsoft Graph PowerShell with delegated least-privilege scopes
-- CSV-driven user creation and security-group assignment
+- CSV-driven joiner validation, identity matching, and safe `-WhatIf` preview
 
 Remaining phases include completing Microsoft Graph automation, hybrid identity integration with Windows Server Active Directory, and final recruiter-focused documentation.
 
@@ -67,7 +67,7 @@ flowchart TD
 | Conditional Access | MFA and compliant-device controls tested before enforcement | Report-only decisions and enforced allow/block paths validated |
 | Intune compliance | Windows 11 VirtualBox pilot enrolled and evaluated | BitLocker, Secure Boot, firewall, antimalware, and OS controls compliant |
 | Endpoint baseline | Windows security baseline assigned to pilot group | Initial VBS error remediated; final deployment succeeded |
-| Graph automation | Delegated Graph session used for a CSV joiner | User created and added to the requested security group; licensing paused |
+| Graph automation | Delegated Graph session and reusable CSV joiner script | Interactive user creation completed; reusable script validates identity, group, scopes, and licence availability under `-WhatIf` |
 
 ## Documentation
 
